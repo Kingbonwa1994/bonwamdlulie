@@ -1,13 +1,17 @@
-import { VortexDemo } from "./VortexDemo";
+import { SparklesPreview } from "./SparklesDemo";
+import { FlipWords } from "./ui/flip-words";
 
 
-interface PageFourProps {
-  isActive: boolean; // Corrected type to boolean
+interface PageOneProps {
+  isActive: boolean; 
 }
-export default function PageFour({ isActive } : PageFourProps){
+export default function PageOne({ isActive } : PageOneProps){
+  const words = ['UX_Architect', 'TypeScript_Developer', 'Nextjs_Ethusiasits', 'React_Native_Fan']
+
   return (
-    <div className={`h-screen ${isActive ? '' : 'hidden'}`}>
-      <VortexDemo />
+    <div className={` overflow-hidden z-10 w-full relative flex flex-col top-32${isActive ? '' : 'hidden'}`}>
+      <FlipWords className="text-pink-300 text text-3xl text-center justify-center" words={words} />
+      <SparklesPreview />
     </div>
   );
 }

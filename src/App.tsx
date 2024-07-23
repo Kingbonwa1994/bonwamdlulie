@@ -3,9 +3,10 @@ import PageOne from './components/PageOne';
 import PageTwo from './components/PageTwo';
 import PageThree from './components/PageThree';
 import PageFour from './components/PageFour';
+import { VortexDemo } from './components/VortexDemo';
 
 const MainComponent = () => {
-  const [activeComponent, setActiveComponent] = useState<number | undefined>(1); // Initially no active component
+  const [activeComponent, setActiveComponent] = useState<number | undefined>(1);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,11 +22,13 @@ const MainComponent = () => {
   }, []);
 
   return (
-    <div>
-      <PageOne isActive={activeComponent === 1} />
+    <div className='overflow-hidden'>
+      <VortexDemo />
+      <PageOne  isActive={activeComponent === 1} />
       <PageTwo isActive={activeComponent === 2} />
       <PageThree isActive={activeComponent === 3} />
       <PageFour isActive={activeComponent === 4} />
+      
     </div>
   );
 };
